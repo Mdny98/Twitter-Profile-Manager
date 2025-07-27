@@ -11,10 +11,10 @@ NUM_TWEETS = 100      # Max tweets to process
 SLEEP_BETWEEN_ACTIONS = 2  # seconds
 WAIT_TIMEOUT = 10     # seconds to wait for elements
 
-# --- Setup Chrome with your session ---
+# --- Setup Chrome with the session ---
 options = Options()
 options.add_argument("--user-data-dir=/tmp/chrome-twitter")  # Use a persistent Chrome session
-options.add_argument("--profile-directory=Default")  # Adjust if you use another profile
+options.add_argument("--profile-directory=Default")  
 options.add_argument("--disable-blink-features=AutomationControlled")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
@@ -23,7 +23,8 @@ print('step1')
 driver = webdriver.Chrome(options=options)
 driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
-driver.get("https://x.com/m_dny98/likes")
+# use your Username
+driver.get("https://x.com/Username/likes")
 time.sleep(5)
 
 def scroll_down():
@@ -311,7 +312,7 @@ while total_unliked < NUM_TWEETS and attempts < max_attempts:
 print(f"Finished unliking. Total: {total_unliked}")
 
 # --- Process Retweets ---
-driver.get("https://x.com/m_dny98")  # Replace with your actual username
+driver.get("https://x.com/username")  # Replace with your actual username
 time.sleep(5)
 
 print("Undoing retweets...")
