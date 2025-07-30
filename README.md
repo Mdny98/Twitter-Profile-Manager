@@ -46,7 +46,7 @@ Uses browser automation to simulate user interactions on Twitter's web interface
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/twitter-account-manager.git
+git clone https://github.com/yourusername/Twitter-Profile-Manager.git
 cd Twitter-Profile-Manager
 ```
 
